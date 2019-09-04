@@ -1,5 +1,4 @@
 import 'dart:convert';
-
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
@@ -14,6 +13,9 @@ class _HomePageState extends State<HomePage> {
   int _offset;
 // requisição http
 
+  /**
+   * Buscando os dados com Http e esperando um future com response
+   */
   Future<Map> _getGifs() async {
     http.Response response;
     if (_search == null) {
@@ -26,6 +28,9 @@ class _HomePageState extends State<HomePage> {
     return json.decode(response.body);
   }
 
+  /**
+   * Printando os dados recebidos na tela
+   */
   @override
   void initState() {
     super.initState();
